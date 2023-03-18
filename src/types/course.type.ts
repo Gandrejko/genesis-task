@@ -9,7 +9,7 @@ type Course = {
   previewImageLink: string;
   rating: number;
   meta: Meta;
-  lessons?: (Lessons)[] | null;
+  lessons?: (Lesson)[] | null;
   containsLockedLessons: boolean;
 }
 type Meta = {
@@ -22,7 +22,7 @@ type CourseVideoPreview = {
   duration: number;
   previewImageLink: string;
 }
-type Lessons = {
+type Lesson = {
   id: string;
   title: string;
   duration: number;
@@ -34,4 +34,4 @@ type Lessons = {
   meta?: null;
 }
 
-export { type Course, type Lessons, type CourseVideoPreview, type Meta };
+export { type Course, type Lesson, type CourseVideoPreview, type Meta };
