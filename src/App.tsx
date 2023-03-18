@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Course } from './types/course.type';
 import { fetchCourses, fetchToken } from './api/course.api';
+import { getLastCourses } from './helpers/getLastCourses';
 
 const App: React.FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -17,7 +18,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const getCourses = async () => {
       const courses = await fetchCourses(token);
-      setCourses(courses);
+      const lastCourses = getLastCourses(courses, 10);
+      setCourses(lastCourses);
     };
     getCourses();
   }, [token]);
