@@ -1,7 +1,7 @@
 type Course = {
   id: string;
   title: string;
-  tags?: (string)[] | null;
+  tags: string[];
   launchDate: string;
   status: string;
   description: string;
@@ -9,12 +9,27 @@ type Course = {
   previewImageLink: string;
   rating: number;
   meta: Meta;
-  lessons?: (Lesson)[] | null;
+  lessons: Lesson[];
   containsLockedLessons: boolean;
+}
+
+type CoursePreview = {
+  id: string;
+  title: string;
+  tags?: (string)[] | null;
+  launchDate: string;
+  status: string;
+  description: string;
+  duration: number;
+  lessonsCount: number;
+  containsLockedLessons: boolean;
+  previewImageLink: string;
+  rating: number;
+  meta: Meta;
 }
 type Meta = {
   slug: string;
-  skills?: (string)[] | null;
+  skills: string[];
   courseVideoPreview: CourseVideoPreview;
 }
 type CourseVideoPreview = {
@@ -34,4 +49,4 @@ type Lesson = {
   meta?: null;
 }
 
-export { type Course, type Lesson, type CourseVideoPreview, type Meta };
+export { type Course, type CoursePreview, type Lesson, type CourseVideoPreview, type Meta };

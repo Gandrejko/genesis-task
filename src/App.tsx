@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Course } from './types/course.type';
+import { CoursePreview } from './types/course.type';
 import { fetchCourses, fetchToken } from './api/course.api';
 import { getLastCourses } from './helpers/get-last-courses';
 import { CoursesPage } from './pages/Courses';
 
 const App: React.FC = () => {
-  const [courses, setCourses] = useState<Course[]>([]);
+  const [courses, setCourses] = useState<CoursePreview[]>([]);
   const [token, setToken] = useState<string>('');
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <CoursesPage courses={courses} />
+      {courses && <CoursesPage courses={courses} />}
     </div>
   );
 }
