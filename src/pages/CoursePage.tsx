@@ -2,6 +2,7 @@ import { Course, type CoursePreview } from '../types/course.type';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchCourse } from '../api/course.api';
+import styles from '../components/course/styles.module.css';
 
 type Properties = {
   courses: CoursePreview[];
@@ -18,7 +19,9 @@ const CoursePage: React.FC<Properties> = ({courses, token}) => {
     getCourse();
   }, []);
   return (
-    <div>{courseId}</div>
+    <div className={styles.coursePage}>
+
+    </div>
   )
 }
 

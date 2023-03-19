@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { CoursePreview } from './types/course.type';
 import { fetchCourses, fetchToken } from './api/course.api';
 import { getLastCourses } from './helpers/get-last-courses';
-import { CoursesPage } from './pages/Courses';
+import { CoursesPage } from './pages/CoursesPage';
 import { Route, Routes } from 'react-router-dom';
-import { CoursePage } from './pages/Course';
+import { CoursePage } from './pages/CoursePage';
 
 const App: React.FC = () => {
   const [courses, setCourses] = useState<CoursePreview[]>([]);

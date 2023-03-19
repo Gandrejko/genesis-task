@@ -23,7 +23,6 @@ const fetchCourse = async (courseId: string | undefined, token: string): Promise
     },
   });
   const data = await res.json();
-  console.log(data);
   return data.courses;
 }
 
