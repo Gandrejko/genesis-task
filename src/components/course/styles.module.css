@@ -6,3 +6,50 @@
 .title {
 
 }
+
+.playerContainer {
+	width: 100%;
+	height: 600px;
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	column-gap: 10px;
+}
+
+.player {
+	width: 100% !important;
+	height: 100% !important;
+	background-color: #000;
+}
+
+.lessonBar {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: 50px;
+	gap: 5px;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+.lessonBar::-webkit-scrollbar { width: 0; }
+
+.lessonBtn {
+	padding: 10px 0;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	color: #000000;
+	background-color: #80d9dc;
+}
+
+.lessonBtnActive {
+	padding: 10px 0;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	background-color: cadetblue;
+	color: #eee;
+}

@@ -1,26 +1,16 @@
-import { Course, type CoursePreview } from '../types/course.type';
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { fetchCourse } from '../api/course.api';
+import { Course } from '../types/course.type';
+import { useLoaderData } from 'react-router-dom';
 import styles from '../components/course/styles.module.css';
+import { PlayerContainer } from '../components/course/components/PlayerContainer';
 
 type Properties = {
-  courses: CoursePreview[];
-  token: string;
+
 }
-const CoursePage: React.FC<Properties> = ({courses, token}) => {
-  const { courseId } = useParams();
-  const [course, setCourse] = useState<Course>();
-  useEffect(() => {
-    const getCourse = async () => {
-      const course = await fetchCourse(courseId, token);
-      setCourse(course);
-    };
-    getCourse();
-  }, []);
+const CoursePage: React.FC<Properties> = () => {
+  const {lessons} = useLoaderData() as Course;
   return (
     <div className={styles.coursePage}>
-
+      {lessons && <PlayerContainer lessons={lessons}/>}
     </div>
   )
 }

@@ -1,12 +1,15 @@
 import { CoursePreview } from '../types/course.type';
 import { CourseCard } from '../components/course-card/course-card';
 import styles from '../assets/css/styles.module.css';
+import { useLoaderData } from 'react-router-dom';
+import { getLastCourses } from '../helpers/get-last-courses';
 
 type Properties = {
-  courses: CoursePreview[];
+
 }
 
-const CoursesPage: React.FC<Properties> = ({courses}) => {
+const CoursesPage: React.FC<Properties> = () => {
+  const courses = getLastCourses(useLoaderData() as CoursePreview[], 10);
   return (
     <div className={styles.coursesPage}>
       {courses.map((course) => {

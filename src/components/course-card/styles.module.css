@@ -73,11 +73,11 @@
   padding: 10px 20px;
   transition: 0.3s;
   text-decoration: none;
-  color: #eee;
-  background-color: cadetblue;
+  color: #000000;
+  background-color: #80d9dc;
 }
 
 .watchCourseBtn:hover {
-  color: #000000;
-  background-color: #80d9dc;
+  color: #eee;
+  background-color: cadetblue;
 }
