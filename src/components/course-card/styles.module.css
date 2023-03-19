@@ -1,0 +1,83 @@
+.courseCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.31);
+  padding: 20px;
+}
+
+.preview {
+  width: 100%;
+  height: 200px;
+  padding-bottom: 10px;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+}
+
+.previewVideo {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.info {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.rating {
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.skills {
+  margin-bottom: 20px;
+}
+
+.skill {
+  font-size: 14px;
+  margin-right: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.skill:hover {
+  font-weight: 700;
+}
+
+.lessonsCount {
+
+}
+
+.separator {
+  margin: 0 10px;
+}
+
+.starIcon {
+  color: rgb(255, 238, 24);
+}
+
+.watchCourseBtn {
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #eee;
+  background-color: cadetblue;
+}
+
+.watchCourseBtn:hover {
+  color: #000000;
+  background-color: #80d9dc;
+}
