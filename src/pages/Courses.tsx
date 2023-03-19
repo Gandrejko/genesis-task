@@ -11,7 +11,7 @@ const CoursesPage: React.FC<Properties> = ({courses}) => {
     <div className={styles.coursesPage}>
       {courses.map((course) => {
         const {id, title, previewImageLink, lessonsCount, meta: {skills, courseVideoPreview}, rating} = course;
-        return (<CourseCard key={id} title={title} previewImageLink={previewImageLink} courseVideoPreview={courseVideoPreview} lessonsCount={lessonsCount} skills={skills} rating={rating}/>)
+        return (<CourseCard key={id} id={id} title={title} previewImageLink={previewImageLink} courseVideoPreview={courseVideoPreview} lessonsCount={lessonsCount} skills={skills} rating={rating}/>)
       })}
     </div>
   )

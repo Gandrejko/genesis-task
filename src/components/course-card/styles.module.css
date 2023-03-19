@@ -72,9 +72,12 @@
   cursor: pointer;
   padding: 10px 20px;
   transition: 0.3s;
+  text-decoration: none;
+  color: #eee;
+  background-color: cadetblue;
 }
 
 .watchCourseBtn:hover {
-  color: #eee;
-  background-color: #5ab25a;
+  color: #000000;
+  background-color: #80d9dc;
 }

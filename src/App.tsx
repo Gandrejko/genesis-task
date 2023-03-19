@@ -3,6 +3,8 @@ import { CoursePreview } from './types/course.type';
 import { fetchCourses, fetchToken } from './api/course.api';
 import { getLastCourses } from './helpers/get-last-courses';
 import { CoursesPage } from './pages/Courses';
+import { Route, Routes } from 'react-router-dom';
+import { CoursePage } from './pages/Course';
 
 const App: React.FC = () => {
   const [courses, setCourses] = useState<CoursePreview[]>([]);
@@ -27,8 +29,10 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {courses && <CoursesPage courses={courses} />}
-      <video src='https://wisey.app/videos/how-to-learn/preview/AppleHLS1/preview.m3u8' autoPlay loop muted />
+      <Routes>
+        <Route path='/' element={courses && <CoursesPage courses={courses} />} />
+        <Route path='/:courseId' element={<CoursePage courses={courses} token={token} />} />
+      </Routes>
     </div>
   );
 }

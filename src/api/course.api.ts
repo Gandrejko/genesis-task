@@ -16,5 +16,16 @@ const fetchCourses = async (token: string): Promise<CoursePreview[]> => {
   return data.courses;
 };
 
-export { fetchToken, fetchCourses };
+const fetchCourse = async (courseId: string | undefined, token: string): Promise<Course> => {
+  const res = await fetch(`https://api.wisey.app/api/v1/core/preview-courses/${courseId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const data = await res.json();
+  console.log(data);
+  return data.courses;
+}
+
+export { fetchToken, fetchCourses, fetchCourse };
 
