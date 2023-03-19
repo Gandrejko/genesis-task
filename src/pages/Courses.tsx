@@ -1,5 +1,6 @@
 import { CoursePreview } from '../types/course.type';
 import { CourseCard } from '../components/course-card/course-card';
+import styles from '../assets/css/styles.module.css';
 
 type Properties = {
   courses: CoursePreview[];
@@ -7,10 +8,10 @@ type Properties = {
 
 const CoursesPage: React.FC<Properties> = ({courses}) => {
   return (
-    <div>
+    <div className={styles.coursesPage}>
       {courses.map((course) => {
-        const {title, previewImageLink, lessonsCount, rating} = course;
-        return (<CourseCard title={title} imageSrc={previewImageLink} lessonsCount={lessonsCount} rating={rating}/>)
+        const {id, title, previewImageLink, lessonsCount, meta: {skills, courseVideoPreview}, rating} = course;
+        return (<CourseCard key={id} title={title} previewImageLink={previewImageLink} courseVideoPreview={courseVideoPreview} lessonsCount={lessonsCount} skills={skills} rating={rating}/>)
       })}
     </div>
   )

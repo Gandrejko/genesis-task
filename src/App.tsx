@@ -28,6 +28,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       {courses && <CoursesPage courses={courses} />}
+      <video src='https://wisey.app/videos/how-to-learn/preview/AppleHLS1/preview.m3u8' autoPlay loop muted />
     </div>
   );
 }

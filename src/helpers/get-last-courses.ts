@@ -1,7 +1,7 @@
 import { CoursePreview } from '../types/course.type';
 
 const getLastCourses = (courses: CoursePreview[], coursesCount: number): CoursePreview[] => {
-  return courses.filter((course, index) => index > courses.length - coursesCount);
+  return courses.reverse().filter((course, index) => index < coursesCount);
 }
 
 export { getLastCourses };
