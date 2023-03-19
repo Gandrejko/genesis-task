@@ -6,7 +6,8 @@ const fetchToken = async (): Promise<string> => {
   return data.token;
 };
 
-const fetchCourses = async (token: string): Promise<CoursePreview[]> => {
+const fetchCourses = async (): Promise<CoursePreview[]> => {
+  const token = localStorage.getItem('token');
   const res = await fetch('https://api.wisey.app/api/v1/core/preview-courses', {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -16,14 +17,16 @@ const fetchCourses = async (token: string): Promise<CoursePreview[]> => {
   return data.courses;
 };
 
-const fetchCourse = async (courseId: string | undefined, token: string): Promise<Course> => {
-  const res = await fetch(`https://api.wisey.app/api/v1/core/preview-courses/${courseId}`, {
+// @ts-ignore
+const fetchCourse = async ({params}): Promise<Course> => {
+  const token = localStorage.getItem('token');
+  const res = await fetch(`https://api.wisey.app/api/v1/core/preview-courses/${params.courseId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
   const data = await res.json();
-  return data.courses;
+  return data;
 }
 
 export { fetchToken, fetchCourses, fetchCourse };
