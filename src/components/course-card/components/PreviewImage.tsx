@@ -6,7 +6,7 @@ type Properties = {
 const PreviewImage: React.FC<Properties> = ({previewImageLink}) => {
   return (
     <div className={styles.previewImage}>
-      <img src={`${previewImageLink}/cover.webp`} alt=""/>
+      <img src={`${previewImageLink}/cover.webp`} alt="preview image"/>
     </div>
   )
 }

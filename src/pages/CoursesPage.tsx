@@ -4,11 +4,7 @@ import styles from '../assets/css/styles.module.css';
 import { useLoaderData } from 'react-router-dom';
 import { getLastCourses } from '../helpers/get-last-courses';
 
-type Properties = {
-
-}
-
-const CoursesPage: React.FC<Properties> = () => {
+const CoursesPage: React.FC = () => {
   const courses = getLastCourses(useLoaderData() as CoursePreview[], 10);
   return (
     <div className={styles.coursesPage}>

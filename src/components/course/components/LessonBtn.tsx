@@ -10,8 +10,8 @@ type Properties = {
 const LessonBtn: React.FC<Properties> = ({title, duration, onClick, isCurrent}) => {
   return (
     <button className={isCurrent ? styles.lessonBtn : styles.lessonBtnActive} onClick={onClick}>
-      <span className={styles.lessonBtnTitle}>{title}</span>
-      <span className={styles.lessonDuration}>duration</span>
+      <span>{title}</span>
+      <span>{duration}</span>
     </button>
   );
 };

@@ -29,7 +29,7 @@ type CoursePreview = {
 }
 type Meta = {
   slug: string;
-  skills?: (string)[] | null;
+  skills?: (string)[];
   courseVideoPreview: CourseVideoPreview;
 }
 type CourseVideoPreview = {

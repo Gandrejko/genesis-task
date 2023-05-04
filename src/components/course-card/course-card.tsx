@@ -5,6 +5,7 @@ import { LessonsCount } from './components/LessonsCount';
 import { Preview } from './components/Preview';
 import { CourseVideoPreview } from '../../types/course.type';
 import { WatchCourseBtn } from './components/WatchCourseBtn';
+import { generatePath, Link } from 'react-router-dom';
 
 type Properties = {
   id: string;
@@ -12,7 +13,7 @@ type Properties = {
   previewImageLink: string;
   courseVideoPreview: CourseVideoPreview;
   lessonsCount: number;
-  skills?: (string)[] | null;
+  skills?: (string)[];
   rating: number;
 }
 const CourseCard: React.FC<Properties> = ({
@@ -34,7 +35,6 @@ const CourseCard: React.FC<Properties> = ({
         <LessonsCount lessonsCount={lessonsCount}/>
       </div>
       <Skills skills={skills}/>
-      <WatchCourseBtn id={id}>Watch video</WatchCourseBtn>
     </div>
   )
 }
