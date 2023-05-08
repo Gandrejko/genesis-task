@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { fetchToken } from './api/course.api';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
-import ReactPlayer from 'react-player';
+import { ChangeTheme } from './components/change-theme/change-theme';
 
 const App: React.FC = () => {
 
@@ -15,6 +15,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <ChangeTheme />
       <RouterProvider router={router} />
     </div>
   );
